@@ -1,0 +1,8 @@
+<p>Q1.あなたはどっち派？</p>
+<%= form_for(@topic, class: "form-horizontal", role: "form") do |f| %>
+  <%= f.radio_button :question, "1"%>
+  <%= label_tag :question_1, "和菓子" %>
+  <%= f.radio_button :question, "2" %>
+  <%= label_tag :question_2, "洋菓子" %>
+  <input type="submit" value="次へ">
+<% end %>
