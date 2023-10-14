@@ -1,0 +1,22 @@
+databases:
+  - name: matchako_matchasweets_analysis_DB
+    databaseName: matchako_matchasweets_analysis_db
+    user: matchako_matchasweets_analysis
+    region: singapore
+
+services:
+  - type: web
+    name: matchako_matchasweets_analysis
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: matchako_matchasweets_analysis_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
