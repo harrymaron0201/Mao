@@ -42,5 +42,5 @@ Rails.application.routes.draw do
   resources :topic4s
   resources :topic5s
 
-
+ root 'matchas#index'
 end
