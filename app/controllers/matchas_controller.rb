@@ -96,5 +96,8 @@ class MatchasController < ApplicationController
     def pege31
     end
 
+    def pege32
+    end
+
 
 end
